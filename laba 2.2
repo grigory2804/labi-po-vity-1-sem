@@ -1,0 +1,6 @@
+def square(number):
+    result = number ** 2
+    return result
+
+your_number = square(8)
+print(your_number)
