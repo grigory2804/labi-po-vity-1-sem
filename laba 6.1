@@ -1,0 +1,33 @@
+class UserAccount:
+    def __init__(self, username, email, password):
+        self.username = username
+        self.email = email
+        self.__password = None
+        self.set_password(password)
+
+    def set_password(self, new_password):
+
+        if not isinstance(new_password, str):
+            raise TypeError("Пароль должен быть строкой.")
+
+        new_password = new_password.strip()
+        if len(new_password) < 6:
+            raise ValueError("Пароль должен быть не короче 6 символов.")
+
+        self.__password = new_password
+
+    def check_password(self, password):
+
+        if not isinstance(password, str):
+            return False
+        return password == self.__password
+
+
+
+user = UserAccount("Alex", "Alex@gmail.com", "PAROL1")
+print("Проверка верного:", user.check_password("PAROL1"))
+print("Проверка неверного:", user.check_password("123"))
+
+user.set_password("novPAROL1")
+print("Проверка старого:", user.check_password("PAROL1"))
+print("Проверка нового:", user.check_password("novPAROL1"))
