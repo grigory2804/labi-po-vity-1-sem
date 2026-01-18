@@ -1,0 +1,24 @@
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def get_radius(self):
+        return self.radius
+
+    def set_radius(self, new_radius):
+        if new_radius > 0:
+            self.radius = new_radius
+        else:
+            print("Ошибка: радиус должен быть положительным!")
+
+start_radius = float(input("Введите начальный радиус круга: "))
+
+circle = Circle(start_radius)
+
+print("Начальный радиус круга:", circle.get_radius())
+
+new_radius = float(input("Введите новый радиус круга: "))
+
+circle.set_radius(new_radius)
+
+print("Новый радиус круга:", circle.get_radius())
