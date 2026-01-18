@@ -1,0 +1,6 @@
+def describe_person(name, age=30):
+    result = "Имя: " + name + ", " + "возраст: " + str(age)
+    return result
+
+information = describe_person("Елена", 75)
+print(information)
