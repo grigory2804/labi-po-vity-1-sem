@@ -1,0 +1,6 @@
+def max_of_two(x, y):
+    result = max(x, y)
+    return result
+
+your_numbers = max_of_two(-1, 0)
+print(your_numbers)
